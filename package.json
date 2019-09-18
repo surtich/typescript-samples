@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon -w src --exec \"tsc --outDir dist && node dist/basic_functions.js\""
+    "dev": "nodemon -e ts -w src --exec \"tsc --outDir dist && node dist/map.js\""
   },
   "devDependencies": {
     "nodemon": "^1.19.2",
