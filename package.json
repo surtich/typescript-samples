@@ -1,0 +1,12 @@
+{
+  "name": "typescript-examples",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon -w src --exec \"tsc --outDir dist && node dist/basic_functions.js\""
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  }
+}
