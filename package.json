@@ -4,10 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon -e ts -w src --exec \"tsc --outDir dist && node dist/map.js\""
+    "dev": "nodemon -e ts -w src --exec \"tsc --outDir dist src/map.ts && node dist/map.js\"",
+    "test": "jest --watch"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.5",
+    "jest": "^24.9.0",
     "nodemon": "^1.19.2",
+    "ts-jest": "^24.1.0",
     "typescript": "^3.6.3"
   }
 }
