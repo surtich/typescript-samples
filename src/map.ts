@@ -1,7 +1,7 @@
-export default function map<T, R>(f: (x: T) => R, xs: T[]) {
-  var ys = [];
-  for (var i = 0; i < xs.length; i++) {
-    ys.push(f(xs[i]));
+export default function map<T, R>(f: (x: T) => R, xs: T[]): R[] {
+  if (xs.length === 0) {
+    return [];
+  } else {
+    return [f(xs[0])].concat(map(f, xs.slice(1)));
   }
-  return ys;
 }
