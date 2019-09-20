@@ -1,5 +1,5 @@
 import map from "../map";
-import { double, isOdd, toUpperCase } from "../basic_functions";
+import { double, isOdd, toUpperCase } from "../utillity_functions";
 
 describe("Map tests", function() {
   it("should double the array values", function() {
