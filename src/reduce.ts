@@ -4,7 +4,7 @@ export default function reduce<T, R>(
   init?: R
 ) {
   var result;
-  if (init == undefined) {
+  if (init == undefined && arguments.length == 2) {
     if (xs.length == 0) {
       throw new TypeError("Reduce of empty array with no initial value");
     }
