@@ -1,4 +1,12 @@
-export var add = (x: number, y: number) => x + y;
+import curry from "./curry";
+
+export var add = curry(function(x: number, y: number) {
+  return x + y;
+});
+
+// export var inc = (x: number) => add(1)(x);
+export var inc = add(1) as (x: number) => number; // point free style version
+
 export var double = (x: number) => x * 2;
 export var toUpperCase = (x: string) => x.toUpperCase();
 
@@ -6,11 +14,10 @@ export var greaterThanThree = (xs: string) => xs.length > 3;
 
 export var isOdd = (x: number) => x % 2 != 0;
 export var isPair = (x: number) => x % 2 == 0;
+// export var not = (f: ???) => !f
 
 export var max = (x: number, y: number) => (x > y ? x : y);
 export var min = (x: number, y: number) => (x < y ? x : y);
-
-// export var not = (f: ???) => !f
 
 export var maxLengthString = (limit: number, xs: string) =>
   limit > xs.length ? limit : xs.length;
