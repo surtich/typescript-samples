@@ -6,7 +6,7 @@ describe("Map tests", function() {
     expect(map(double, [])).toEqual([]);
     expect(map(double, [1, 2, 3])).toEqual([2, 4, 6]);
   });
-  it.only("should inc the array values", function() {
+  it("should inc the array values", function() {
     expect(map(inc, [1, 2, 3])).toEqual([2, 3, 4]);
   });
   it("IsOdd array tests", function() {

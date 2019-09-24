@@ -1,11 +1,11 @@
-import curry from "./curry";
+import { curry } from "ramda";
 
 export var add = curry(function(x: number, y: number) {
   return x + y;
 });
 
 // export var inc = (x: number) => add(1)(x);
-export var inc = add(1) as (x: number) => number; // point free style version
+export var inc = add(1); // point free style version
 
 export var double = (x: number) => x * 2;
 export var toUpperCase = (x: string) => x.toUpperCase();

@@ -3,7 +3,7 @@ import { add, max, maxLengthString, maxString } from "../utillity_functions";
 
 describe("Reduce tests", function() {
   it("should sum array of numbers ", function() {
-    expect(reduce(add, [], 0)).toBe(0);
+    expect(reduce<number, number>(add, [], 0)).toBe(0);
     expect(reduce(add, [6], 0)).toBe(6);
     expect(reduce(add, [-5, 6], 0)).toBe(1);
     expect(reduce(add, [1, 2, 3, 7, 8, 9], 0)).toBe(30);
