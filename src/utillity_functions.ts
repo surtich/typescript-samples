@@ -1,4 +1,6 @@
 import { curry } from "ramda";
+import map from "./map";
+import flatMap from "./flatMap";
 
 export var add = curry(function(x: number, y: number) {
   return x + y;
@@ -32,3 +34,9 @@ export var maxString = (maxXs: string[], xs: string): string[] => {
 };
 
 export var pair = <T, R>(x: T, y: R): [T, R] => [x, y];
+
+export var combine = <T, R, S>(f: (x: T, y: R) => S, ys: R[]) => (x: T) =>
+  map(y => f(x, y), ys);
+
+export var product = <T, R, S>(f: (x: T, y: R) => S, xs: T[], ys: R[]) =>
+  flatMap(combine(f, ys), xs);

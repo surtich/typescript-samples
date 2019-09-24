@@ -2,7 +2,7 @@ import reduce from "./reduce";
 
 var mapReducer = function<T, R>(f: (x: T) => R) {
   return function reducer(acc: R[], x: T): R[] {
-    return acc.concat(f(x));
+    return [...acc, f(x)];
   };
 };
 
