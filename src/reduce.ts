@@ -2,7 +2,7 @@ export default function reduce<T, R>(
   f: (acc: R, x: T) => R,
   xs: T[],
   init?: R
-) {
+): R {
   var result;
   if (init == undefined && arguments.length == 2) {
     if (xs.length == 0) {
@@ -15,5 +15,5 @@ export default function reduce<T, R>(
   for (var i = 0; i < xs.length; i++) {
     result = f(result as any, xs[i]);
   }
-  return result;
+  return result as R;
 }
