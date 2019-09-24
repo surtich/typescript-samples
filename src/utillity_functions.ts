@@ -1,6 +1,4 @@
-import { curry } from "ramda";
-import map from "./map";
-import flatMap from "./flatMap";
+import { chain, curry, map } from "ramda";
 
 export var add = curry(function(x: number, y: number) {
   return x + y;
@@ -39,4 +37,7 @@ export var combine = <T, R, S>(f: (x: T, y: R) => S, ys: R[]) => (x: T) =>
   map(y => f(x, y), ys);
 
 export var product = <T, R, S>(f: (x: T, y: R) => S, xs: T[], ys: R[]) =>
-  flatMap(combine(f, ys), xs);
+  chain(combine(f, ys), xs);
+
+export var head = <T>(xs: T[]) => xs[0];
+export var append = <T>(x: T) => (xs: T[]) => [...xs, x];
